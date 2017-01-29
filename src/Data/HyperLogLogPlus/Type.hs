@@ -77,8 +77,8 @@ import           GHC.Int
 -- >>> intersection $ [(foldr insert mempty [1 .. 15000] ::  HLL), (foldr insert mempty [12000 .. 20000] :: HLL)]
 -- 3100
 data HyperLogLogPlus (p :: Nat) (k :: Nat) = HyperLogLogPlus
-  { hllRank   :: V.Vector Int8
-  , hllMinSet :: Set Hash64
+  { hllRank   :: !(V.Vector Int8)
+  , hllMinSet :: !(Set Hash64)
   } deriving (Eq)
 
 type role HyperLogLogPlus nominal nominal
